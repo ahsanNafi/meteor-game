@@ -35,7 +35,7 @@ public class Player extends GameObject{
 			GameObject tempObject = handler.object.get(i);;
 			if(tempObject.getID() == ID.BasicEnemy || tempObject.getID() == ID.FastEnemy || tempObject.getID() == ID.SmartEnemy || tempObject.getID() == ID.BossOne) {
 				if(getBounds().intersects(tempObject.getBounds())){
-					AudioPlayer.getSound("menu_sound").play();
+
 					HUD.health-=2;
 				}
 			}

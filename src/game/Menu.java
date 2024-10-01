@@ -34,13 +34,12 @@ public class Menu extends MouseAdapter{
 		if(Game.gameState == State.Menu) {
 			if(mouseOver(mx,my,Game.WIDTH/2-110,160,200,64)) {
 				Game.gameState = State.Select;	
-				AudioPlayer.getSound("menu_sound1").play();
 				return;
 			}
 		
 		//game help 
 			if (mouseOver(mx,my,Game.WIDTH/2-110,240,200,64) ) {
-				AudioPlayer.getSound("menu_sound1").play();
+
 				Game.gameState = State.Help;
 		}
 		
@@ -54,7 +53,7 @@ public class Menu extends MouseAdapter{
 		if(Game.gameState == State.Help) {
 			
 			if(mouseOver(mx,my,Game.WIDTH/2-110,380,200,64)) {
-				AudioPlayer.getSound("menu_sound1").play();
+
 				Game.gameState = State.Menu;
 				return;
 			}	
@@ -63,7 +62,7 @@ public class Menu extends MouseAdapter{
 		if( Game.gameState == State.Select) {
 			//normal
 			if(mouseOver(mx,my,Game.WIDTH/2-110,160,200,64)) {	
-				AudioPlayer.getSound("menu_sound1").play();
+
 				Game.gameState = State.Game;
 				handler.addObject(new Player(Game.WIDTH/2-16,Game.HEIGHT/2-16,ID.Player,handler));
 				handler.clearEnemys();
@@ -73,7 +72,7 @@ public class Menu extends MouseAdapter{
 		
 		// hard level
 			if (mouseOver(mx,my,Game.WIDTH/2-110,240,200,64) ) {
-				AudioPlayer.getSound("menu_sound1").play();
+
 				Game.gameState = State.Game;
 				handler.addObject(new Player(Game.WIDTH/2-16,Game.HEIGHT/2-16,ID.Player,handler));
 				handler.clearEnemys();
@@ -83,7 +82,7 @@ public class Menu extends MouseAdapter{
 		
 		// super hard
 			if(mouseOver(mx,my,Game.WIDTH/2-110,320,200,64)) {
-				AudioPlayer.getSound("menu_sound1").play();
+				
 				Game.gameState = State.Game;
 				handler.addObject(new Player(Game.WIDTH/2-16,Game.HEIGHT/2-16,ID.Player,handler));
 				handler.clearEnemys();
@@ -93,7 +92,7 @@ public class Menu extends MouseAdapter{
 				game.diff = 2;
 			}
 			if(mouseOver(mx,my,20,25,70,30)) {
-				AudioPlayer.getSound("menu_sound1").play();
+				
 				Game.gameState = State.Menu;
 			}
 		}
@@ -102,7 +101,7 @@ public class Menu extends MouseAdapter{
 		
 		if(Game.gameState == State.EndScreen) {
 			 if(mouseOver(mx,my,Game.WIDTH/2-120,380,250,64)){
-				AudioPlayer.getSound("menu_sound2").play();
+				
 				Game.gameState = State.Game;
 				hud.setLevel(1);
 				hud.score(0);

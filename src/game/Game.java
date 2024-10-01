@@ -48,10 +48,6 @@ public class Game extends Canvas implements Runnable{
 		this.addKeyListener(new KeyInput(handler,this));
 		this.addMouseListener(menu);
 		
-		AudioPlayer.init();
-		
-		AudioPlayer.getMusic("music").loop();
-		
 		//makes the window
 		new Window(WIDTH,HEIGHT, "Meteor", this );
 		 if(gameState == State.Menu){
@@ -116,7 +112,6 @@ public class Game extends Canvas implements Runnable{
 				spawner.tick();
 				handler.tick();
 				if(HUD.health <=0) {
-					AudioPlayer.getSound("menu_sound1").play();
 					HUD.health =100;
 					gameState =State.EndScreen;
 					handler.clearEnemys();
@@ -175,7 +170,7 @@ public class Game extends Canvas implements Runnable{
 	//Lonely main method			
 	public static void main (String []args) {
 			
-		new Game();
+			new Game();
 	}
 	
 }
